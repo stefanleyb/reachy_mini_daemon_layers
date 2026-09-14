@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "bootstrap_path": "/opt/reachy-mini-layers/bootstrap",
+  "layers": [
+    {
+      "name": "movement-diagnostics",
+      "version": "2026-09-13.1",
+      "kind": "temporary diagnostic",
+      "path": "/opt/reachy-mini-layers/movement-diagnostics",
+      "legacy_paths": [
+        "/opt/movement-diagnostic-instrument"
+      ],
+      "order": 10,
+      "hook": "expose_targets",
+      "required_files": [
+        "expose_targets.py",
+        "verify_overlay.py"
+      ],
+      "compatible_daemon_versions": [
+        "1.10.0"
+      ],
+      "sha256": {
+        "expose_targets.py": "f6472a0a5dd6cacd46d698f43f90a8b76e0917d36fb080a2921394301dae20ca",
+        "verify_overlay.py": "6b28f3be361079dca6c70346a767a01e765d9c413bfeb31d9689cf243975def5",
+        "check_targets.py": "147d86606e73d2f4c52ee700d513eed38f5c19733651b110fd7ef5f6b8cbca9e"
+      },
+      "verifier": {
+        "type": "movement_diagnostics"
+      }
+    },
+    {
+      "name": "body-yaw-calibration",
+      "version": "2026-09-12.3",
+      "kind": "permanent correction",
+      "path": "/opt/reachy-mini-layers/body-yaw-calibration",
+      "legacy_paths": [],
+      "order": 20,
+      "hook": "body_yaw_calibration",
+      "required_files": [
+        "body_yaw_calibration.py",
+        "verify.py"
+      ],
+      "compatible_daemon_versions": [
+        "1.10.0"
+      ],
+      "sha256": {
+        "body_yaw_calibration.py": "46721ded2791d23bce22a6f353e90794ea24b897f52e96d44b3c9e4e3d17ee0a",
+        "verify.py": "12117056af109f202982aea13ff9ad9578f17b7c03c25d86f94616f78e00bdac"
+      },
+      "verifier": {
+        "type": "body_yaw_calibration"
+      }
+    },
+    {
+      "name": "body-motor-igain",
+      "version": "2026-09-14.4",
+      "kind": "permanent correction",
+      "path": "/opt/reachy-mini-layers/body-motor-igain",
+      "legacy_paths": [],
+      "order": 25,
+      "hook": "body_motor_igain",
+      "required_files": [
+        "body_motor_igain.py",
+        "verify.py"
+      ],
+      "compatible_daemon_versions": [
+        "1.10.0"
+      ],
+      "sha256": {
+        "body_motor_igain.py": "274641ecb4354733adafc07b96641dedd1018e138c5dfd55975bc3e410f4a520",
+        "verify.py": "dbef5fe960f47d912031fee187e8191519065b6052758c985b74df64d13add0a"
+      },
+      "verifier": {
+        "type": "body_motor_igain"
+      }
+    },
+    {
+      "name": "face-loss-return",
+      "version": "2026-09-13.1",
+      "kind": "permanent safety correction",
+      "path": "/opt/reachy-mini-layers/face-loss-return",
+      "legacy_paths": [],
+      "order": 30,
+      "hook": "face_loss_return",
+      "required_files": [
+        "face_loss_return.py",
+        "verify.py"
+      ],
+      "compatible_daemon_versions": [
+        "1.10.0"
+      ],
+      "sha256": {
+        "face_loss_return.py": "56e563dcd0565b81e968f1db82e2b72a39f8d6d0f87a4fe2f3c8fd2152e9dd79",
+        "verify.py": "de52c3f7a5bc0ad00e28e780cd5836885ae6226830e1dd9b6404b599dbbcb11d"
+      },
+      "verifier": {
+        "type": "face_loss_return"
+      }
+    },
+    {
+      "name": "face-frame-sync",
+      "version": "08d9e40ca",
+      "kind": "permanent correction",
+      "path": "/home/pollen/frame_pose_sync_08d9e40ca",
+      "legacy_paths": [],
+      "order": 90,
+      "hook": null,
+      "required_files": [
+        "reachy_mini/media/camera_timestamps.py"
+      ],
+      "compatible_daemon_versions": [
+        "1.10.0"
+      ],
+      "sha256": {
+        "reachy_mini/daemon/backend/abstract.py": "df946646cf94c1673415916122c0515a45b595cd205ad21e8633c25f3aee8116",
+        "reachy_mini/media/camera_timestamps.py": "657002b73c80eaee277fcd8506d017d5f1a1bf133f24f3c0c7bff26ea27e943b",
+        "reachy_mini/media/media_server.py": "34f351db94140537cc5f0c99eaf237c39d8d7283666c7b67baa925f952e6e2db",
+        "reachy_mini/vision/face_tracking.py": "246c5341b34f975c9abb67ce229509d053cc918550b0310283ad6e8996e32eb1"
+      },
+      "verifier": {
+        "type": "import_path",
+        "module": "reachy_mini.media.camera_timestamps"
+      }
+    }
+  ]
+}
