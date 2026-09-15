@@ -9,7 +9,7 @@ sibling `reachy_mini_layer_manager` repository.
 
 | Name | Role | Current code |
 |---|---|---|
-| `face-frame-sync` | permanent correction | accepted overlay `08d9e40ca` |
+| `face-frame-sync` | permanent correction | accepted overlay `08d9e40ca`, proposed upstream as [PR #1396](https://github.com/pollen-robotics/reachy_mini/pull/1396) |
 | `body-yaw-calibration` | permanent correction | corrected bumpless `2026-09-12.3` active on robot |
 | `face-loss-return` | permanent safety correction | loss-only 40°/s world-neutral return cap; deployed and hardware-accepted |
 | `body-motor-igain` | permanent correction | body-motor `position_i_gain = 25` plus a ±120° body-yaw clamp; `2026-09-14.4` active on robot |
