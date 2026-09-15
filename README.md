@@ -18,11 +18,10 @@ You need both.
 | **movement-diagnostics** | Temporary, read-only. Exposes what the robot is *actually* being told to do internally, so you can measure problems instead of guessing. Not a correction — turn it off when you're done. |
 | **face-frame-sync** | The face tracker uses each camera frame with the head position from the *wrong* moment, causing overshoot. Proposed upstream as [PR #1396](https://github.com/pollen-robotics/reachy_mini/pull/1396) — if that merges, this layer becomes unnecessary. |
 
-⚠️ **These were tuned on one specific robot.** Motor behaviour varies between
-units. `body-motor-igain` in particular sets a value that suited *that* robot —
-yours may need a different one, or none at all. Read what a layer does before
-enabling it, and treat the numbers as a starting point rather than a
-prescription.
+⚠️ **Check the values against your own robot.** Motors vary between units, so a
+figure that suits one Reachy Mini may not suit another — `body-motor-igain` in
+particular carries a specific gain value. Read what a layer does and what value
+it sets before you enable it, and adjust it to your robot if needed.
 
 ## Getting started
 
